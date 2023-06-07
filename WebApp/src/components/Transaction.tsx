@@ -2,8 +2,6 @@
 import { Item } from '@/components/Form'
 import ItemComp from './ItemComp';
 import { Card, Typography } from "@material-tailwind/react";
-import React, { useContext } from 'react'
-
 
 type Props = {
     items: Item[]; // Define the type for the 'items' property
@@ -11,7 +9,7 @@ type Props = {
 
 export default function Transaction({ items }: Props) {
     return (
-        <Card className="overflow-scroll h-full w-full">
+        <Card className="overflow-y-auto h-40">
             <table className="w-full min-w-max table-auto text-left">
                 <thead>
                     <tr>
@@ -19,7 +17,7 @@ export default function Transaction({ items }: Props) {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal leading-none "
+                                className="font-bold leading-none "
                             >
                                 Menu
                             </Typography>
@@ -28,7 +26,7 @@ export default function Transaction({ items }: Props) {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal leading-none"
+                                className="font-bold leading-none"
                             >
                                 price
                             </Typography>

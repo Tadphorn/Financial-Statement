@@ -47,7 +47,7 @@ export default function ItemComp({ id, title, amount }: Props) {
                         value={updateTitle}
                     />
                 ) : (
-                    <Typography variant="small" color="blue-gray" className="font-normal">
+                    <Typography variant="small" color="blue-gray" className="font-bold">
                         {title}
                     </Typography>
                 )}
@@ -57,13 +57,13 @@ export default function ItemComp({ id, title, amount }: Props) {
 
                 {editMode ? (
                     <input
-                        className="w-4/5 bg-gray-200"
+                        className="w-4/5"
                         type="number"
                         onChange={(e) => setUpdateAmount(e.target.value)}
                         value={updateAmount}
                     />
                 ) : (
-                    <Typography variant="small" color="blue-gray" className="font-normal">
+                    <Typography variant="small" color="blue-gray" className="font-bold">
                         {amount}
                     </Typography>
                 )}

@@ -20,7 +20,7 @@ export default function Summary({ items }: Props) {
         summary()
     }, [items, income, expense])
     return (
-        <Card className="overflow-scroll h-full w-full">
+        <Card className="h-35 w-full">
             <table className="w-full min-w-max table-auto text-left">
                 <thead>
                     <tr>
@@ -28,7 +28,7 @@ export default function Summary({ items }: Props) {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal leading-none text-green-500"
+                                className="font-bold leading-none text-green-500"
                             >
                                 Income
                             </Typography>
@@ -37,7 +37,7 @@ export default function Summary({ items }: Props) {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal leading-none  text-pink-500"
+                                className="font-bold leading-none  text-pink-500"
                             >
                                 Expense
                             </Typography>
@@ -46,7 +46,7 @@ export default function Summary({ items }: Props) {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-normal leading-none text-cyan-500"
+                                className="font-bold leading-none text-cyan-500"
                             >
                                 Total
                             </Typography>
@@ -55,10 +55,10 @@ export default function Summary({ items }: Props) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td> {income} </td>
-                        <td> {expense} </td>
-                        <td> {income + expense} </td>
+                    <tr >
+                        <td className="font-bold text-green-500 "> {income} </td>
+                        <td className="font-bold text-pink-500"> {expense} </td>
+                        <td className="font-bold text-cyan-500"> {income + expense} </td>
                     </tr>
                 </tbody>
             </table>
