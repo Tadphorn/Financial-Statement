@@ -1,38 +1,41 @@
-
 import Transaction from "@/components/Transaction";
 import Form, { Item } from "@/components/Form";
 import { useContext, useEffect, useState } from "react";
-import ItemContext from '@/context/Context';
 import { Card, Typography } from "@material-tailwind/react";
 import Summary from "./components/Summary";
+import { useQuery } from "@tanstack/react-query";
+import { fetchTrans } from "./api/transaction";
+import { stringify } from "querystring";
+import { json } from "stream/consumers";
+type Props = {};
 
-type Props = {}
+export default function App({}: Props) {
+  const {
+    data: moneys,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["transactions"],
+    queryFn: fetchTrans,
+  });
 
-
-export default function App({ }: Props) {
-  const [items, setItems] = useState<Item[]>([])
-  const [income, setIncome] = useState(0)
-  const [expense, setExpense] = useState(0)
-  //newItem from child component
-  const onAddNewItem = (newItem: Item) => {
-    setItems((prevItems) => [newItem, ...prevItems]);
-  }
-
+  if (isLoading) return <div>"loading..."</div>;
+  if (error instanceof Error) return <div>`Error: ${error.message}`</div>;
 
   return (
     <div>
-      <div className='main'>
-        <h1 className='text-5xl p-10'>Income-Expense App</h1>
-        <ItemContext.Provider value={{ items, setItems }}>
-          <Form onAddItem={onAddNewItem}></Form>
-          <div className='pt-10 pb-10'>
-            <Transaction items={items} />
-          </div>
-        </ItemContext.Provider>
-        <Summary items={items}></Summary>
+      {/* <p>{stringify.JSON(reversed)}</p> */}
+      {/* {moneys.map((money: any) => (
+        <p key={money.id}>{money.title}</p>
+      ))} */}
+      <div className="main">
+        <h1 className="text-5xl p-10">Income-Expense App</h1>
+        <Form />
+        <div className="pt-10 pb-10">
+          <Transaction items={moneys} />
+        </div>
+        <Summary items={moneys}></Summary>
       </div>
-
     </div>
-
-  )
+  );
 }
