@@ -58,9 +58,9 @@ export default function Summary({ items }: Props) {
         </thead>
         <tbody>
           <tr>
-            <td className="font-bold text-green-500 "> {income} </td>
-            <td className="font-bold text-pink-500"> {expense} </td>
-            <td className="font-bold text-cyan-500"> {income + expense} </td>
+            <td className="font-bold text-green-500 p-4"> {income} </td>
+            <td className="font-bold text-pink-500 p-4"> {expense} </td>
+            <td className="font-bold text-cyan-500 p-4"> {income + expense} </td>
           </tr>
         </tbody>
       </table>

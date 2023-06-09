@@ -10,6 +10,7 @@ export async function createTrans(newTrans: any) {
     id: newTrans.id,
     title: newTrans.title,
     amount: newTrans.amount,
+    genres: newTrans.genres,
   });
   return response.data;
 }
@@ -22,6 +23,13 @@ export async function updateTrans(updatedTrans: any) {
       title: updatedTrans.updateTitle,
       amount: updatedTrans.updateAmount,
     }
+  );
+  return response.data;
+}
+
+export async function removeTrans(id: string | undefined) {
+  const response = await axios.delete(
+    `http://localhost:3000/transactions/${id}`
   );
   return response.data;
 }

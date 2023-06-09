@@ -2,7 +2,7 @@ import { Typography } from "@material-tailwind/react";
 import { useContext, useState } from "react";
 import { Item } from "./Form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateTrans } from "../api/transaction";
+import { removeTrans, updateTrans } from "../api/transaction";
 
 type Props = {
   id: string;
@@ -17,6 +17,7 @@ export default function ItemComp({ id, title, amount }: Props) {
 
   const queryClient = useQueryClient();
 
+  //edit Transaction
   const updateTransMutation = useMutation({
     mutationFn: updateTrans,
     onSuccess: () => {
@@ -29,6 +30,18 @@ export default function ItemComp({ id, title, amount }: Props) {
     }
     setEditMode(!editMode);
   };
+
+  //delete Transaction
+  const deleteTransMutation = useMutation({
+    mutationFn: removeTrans,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["transactions"] });
+    },
+  });
+  const deleteTrans =()=>{
+    console.log(id)
+    deleteTransMutation.mutate(id);
+  }
   return (
     <tr className="even:bg-blue-gray-50/50">
       <td className="p-4">
@@ -69,6 +82,18 @@ export default function ItemComp({ id, title, amount }: Props) {
           onClick={() => edit()}
         >
           {!editMode ? "Edit" : "Save"}
+        </Typography>
+      </td>
+      <td className="p-4">
+        <Typography
+          as="a"
+          href="#"
+          variant="small"
+          color="blue"
+          className="font-medium"
+          onClick={() => deleteTrans()}
+        >
+          Del
         </Typography>
       </td>
     </tr>

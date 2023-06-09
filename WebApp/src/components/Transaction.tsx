@@ -33,6 +33,8 @@ export default function Transaction({ items }: Props) {
                         </th>
                         <th className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
                         </th>
+                        <th className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+                        </th>
 
                     </tr>
                 </thead>
