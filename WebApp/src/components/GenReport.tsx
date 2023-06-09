@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 type Props = {};
 
-function Gen({}: Props) {
+function GenReport({}: Props) {
   return <div className="main">gen page</div>;
 }
 
-export default Gen;
+export default GenReport;

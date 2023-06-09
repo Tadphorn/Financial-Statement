@@ -78,10 +78,11 @@ export default function Form({}: Props) {
             value={amount}
           />
         </div>
-        <div className="pt-10 form-control flex flex-col space-y-3">
+        <div className=" form-control flex flex-col space-y-3">
+          <label className="text-xl">หมวดหมู่</label>
           <Select
             size="lg"
-            label="Select Version"
+            label="หมวดหมู่"
             value={genres}
             onChange={(e: any) => {
               setGenres(e);
