@@ -1,4 +1,5 @@
 import React from "react";
+import IconHome from "../assets/Ihome.svg";
 import {
   Card,
   Typography,
@@ -14,12 +15,11 @@ import {
   UserCircleIcon,
   PowerIcon,
 } from "@heroicons/react/24/solid";
-import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
-import { Link, useNavigate } from "react-router-dom";
-
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(0);
 
   const handleOpen = (value: any) => {
@@ -60,16 +60,27 @@ export default function Sidebar() {
           </ListItem>
           <AccordionBody className="py-1">
             <List className="p-0">
-              <ListItem>
-                Analytics
-                {/* <button onClick={() => navigate("/")}> Analytics</button> */}
-              </ListItem>
+              <a onClick={() => navigate(`/gen`)}>
+                <ListItem>Analytics</ListItem>
+              </a>
               <ListItem>Reporting</ListItem>
             </List>
           </AccordionBody>
         </Accordion>
 
         <hr className="my-2 border-blue-gray-50" />
+        <a onClick={() => navigate(`/`)}>
+          <ListItem>
+            <ListItemPrefix>
+              <img
+                src={IconHome}
+                alt="IconHome"
+                className="w-5 h-5 opacity-70"
+              />
+            </ListItemPrefix>
+            Home
+          </ListItem>
+        </a>
         <ListItem>
           <ListItemPrefix>
             <UserCircleIcon className="h-5 w-5" />

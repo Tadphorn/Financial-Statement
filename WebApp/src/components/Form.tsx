@@ -87,7 +87,7 @@ export default function Form({}: Props) {
               setGenres(e);
             }}
           >
-            <Option value="Personal care">Income</Option>
+            <Option value="Income">Income</Option>
             <Option value="Personal care">Personal care</Option>
             <Option value="Housing">Housing</Option>
             <Option value="Food">Food</Option>

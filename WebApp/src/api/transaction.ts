@@ -6,6 +6,7 @@ export async function fetchTrans() {
 }
 
 export async function createTrans(newTrans: any) {
+  console.log(newTrans.genres);
   const response = await axios.post(`http://localhost:3000/transactions`, {
     id: newTrans.id,
     title: newTrans.title,
@@ -22,6 +23,7 @@ export async function updateTrans(updatedTrans: any) {
       id: updatedTrans.id,
       title: updatedTrans.updateTitle,
       amount: updatedTrans.updateAmount,
+      genres: updatedTrans.updateGen,
     }
   );
   return response.data;

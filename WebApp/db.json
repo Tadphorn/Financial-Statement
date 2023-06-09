@@ -2,9 +2,9 @@
   "transactions": [
     {
       "id": "bef54c9e-33c7-43cb-984f-470b1fb64818",
-      "title": "new gen",
+      "title": "new gen woww",
       "amount": "200",
-      "genres": "Personal care"
+      "genres": "Education"
     },
     {
       "id": "e40e2df9-8a14-430b-9538-0cc0a210a91a",
@@ -26,27 +26,15 @@
     },
     {
       "id": "79ffc6e4-3958-4ff0-9609-55f27c6e1258",
-      "title": "cloth",
+      "title": "skirt",
       "amount": "-300",
-      "genres": "Personal care"
-    },
-    {
-      "id": "023bdc67-6d89-4cfc-8076-5f3c43bfce97",
-      "title": "mommy",
-      "amount": "1000",
       "genres": "Personal care"
     },
     {
       "id": "bbd0f270-8415-4355-9d46-34daaba15521",
       "title": "daddy",
       "amount": "2000",
-      "genres": "Personal care"
-    },
-    {
-      "id": "0358a4be-72c3-487c-8ff8-f792b932a6cd",
-      "title": "dffwefbaba",
-      "amount": "-200",
-      "genres": "Food"
+      "genres": "Income"
     }
   ]
 }
