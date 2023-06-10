@@ -30,6 +30,7 @@ export default function Home({}: Props) {
 
   return (
     <div className="main">
+      <h1 className="text-5xl p-10">Income-Expense App</h1>
       <Form />
       <div className="pt-10 pb-10">
         <Transaction items={moneys} />

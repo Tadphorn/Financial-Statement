@@ -61,9 +61,8 @@ export default function Sidebar() {
           <AccordionBody className="py-1">
             <List className="p-0">
               <a onClick={() => navigate(`/gen`)}>
-                <ListItem>Analytics</ListItem>
+                <ListItem> Reporting</ListItem>
               </a>
-              <ListItem>Reporting</ListItem>
             </List>
           </AccordionBody>
         </Accordion>

@@ -10,7 +10,6 @@ type Props = {};
 export default function App({}: Props) {
   return (
     <div>
-      <h1 className="text-5xl p-10 main">Income-Expense App</h1>
       <Router>
         <Sidebar></Sidebar>
         <Routes>
